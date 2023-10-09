@@ -1,0 +1,92 @@
+[tool.poetry]
+name = "content-database"
+version = "0.1.0"
+authors = ["Joe Maliszewski, <joe.t.maliszewski@gmail.com>"]
+description = "A database to store chatgpt content"
+license = "Not open source"
+keywords = [
+    "FIXME",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8"
+]
+
+homepage = "https://github.com/vinegar/content-database"
+repository = "https://github.com/vinegar/content-database"
+readme = "README.md"
+
+[[tool.poetry.source]]
+name = "pypi_"
+url = "https://pypi.org/simple/"
+default = true
+
+[[tool.poetry.source]]
+name = "artifact"
+url = "https://degould-514497959020.d.codeartifact.eu-west-1.amazonaws.com/pypi/ml/simple/"
+secondary = true
+
+# Do not manually edit, use poetry add/remove (--dev) to manage dependencies
+[tool.poetry.dependencies]
+python = "~3.8"
+dvc = "^2.9.3"
+ml-pipeline-components = {version = "^0.3.5", source = "artifact"}
+
+[tool.poetry.dev-dependencies]
+assertpy = "^1.0"
+bandit = "^1.6.2"
+black = "^19.10b0"
+isort = "^5.10.1"
+pytest = "^6.2.5"
+coverage = "^5.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.liccheck]
+authorized_licenses = [
+            "bsd",
+            "new bsd",
+            "bsd license",
+            "new bsd license",
+            "simplified bsd",
+            "apache",
+            "apache 2.0",
+            "Apache License 2.0",
+            "Apache 2",
+            "Apache-2.0",
+            "Apache Software",
+            "apache software license",
+            "gnu lgpl",
+            "GPLv2 | EPLv1",
+            "GPLv2 with linking exception",
+            "GNU General Public License v2 (GPLv2)",
+            "GNU General Public License v2 or later (GPLv2+)",
+            "Eclipse Public License v2.0",
+            "lgpl with exceptions or zpl",
+            "isc license",
+            "isc license (iscl)",
+            "mit",
+            "mit license",
+            "Mozilla Public License 2.0 (MPL 2.0)",
+            "python software foundation license",
+            "Python Software Foundation",
+            "Unlicense",
+            "zpl 2.1",
+]
+unauthorized_licenses = [
+    "gpl v3",
+]
+# strategy_ini_file = "./liccheck.ini"
+# level = "STANDARD"
+# requirement_txt_file = "./requirements.txt" # ignored if dependencies or optional_dependencies are defined
+# reporting_txt_file = "path/to/reporting.txt file" # by default is None
+# no_deps = false
+dependencies = true # to load [project.dependencies]
+optional_dependencies = ["test"] # to load extras from [project.optional-dependencies]
