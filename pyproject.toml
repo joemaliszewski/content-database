@@ -28,7 +28,11 @@ priority = "default"
 
 # Do not manually edit, use poetry add/remove (--dev) to manage dependencies
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.13"
+mysql-connector-python = "^8.1.0"
+python-dotenv = "^1.0.0"
+loguru = "^0.7.2"
+pandas = "^2.1.1"
 
 [tool.poetry.dev-dependencies]
 
