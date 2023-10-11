@@ -1,6 +1,13 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
+
+export REPOSITORY_NAME=content-database
+export AWS_ACCOUNT_NUMBER ?= 294141084087
+export REGION = eu-west-1
+export GLOBAL_VERSION = 0.0.1
+
+
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 
@@ -97,3 +104,7 @@ poetry.lock:
 
 codeartifact_authenticate:
 	poetry config http-basic.artifact aws `aws codeartifact get-authorization-token --domain degould  --query authorizationToken --output text`
+
+infra__%:
+	${MAKE} --directory ${CURDIR}/infra -f make.mk $*
+
