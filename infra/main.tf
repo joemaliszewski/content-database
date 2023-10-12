@@ -10,7 +10,6 @@ resource "aws_db_instance" "default" {
     skip_final_snapshot  = false
     db_subnet_group_name    = aws_db_subnet_group.rds_subnet_group.name
     vpc_security_group_ids = [aws_security_group.rds_sg.id]
-    tags = {
-    Name = "main-rds-instance"
-    }
+    identifier = "dev-rds-content-database"
+    final_snapshot_identifier = "dev-rds-content-database-final-snapshot"
 }
