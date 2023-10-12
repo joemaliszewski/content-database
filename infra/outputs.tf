@@ -1,4 +1,4 @@
-# output "rds_endpoint" {
-#   description = "RDS endpoint"
-#   value       = aws_db_instance.default.endpoint
-# }
+output "rds_endpoint" {
+  description = "The connection endpoint for the RDS instance."
+  value       = aws_db_instance.default.endpoint
+}

@@ -4,3 +4,4 @@ region = "eu-west-1"
 team = "v"
 environment = "dev"
 application = "content_database"
+subnet_ids = [  "subnet-0c5e69f23789eba09",  "subnet-098916efb62b51d2e",  "subnet-0e4940b45ad301e65"]
