@@ -31,7 +31,6 @@ deploy:
 destroy:
 	${RUN_TERRAFORM} destroy -input=false -auto-approve \
 		-var environment=${ENVIRONMENT} \
-		-var image_tag=${IMAGE_TAG} \
 		-var-file=config/${ENVIRONMENT}.tfvars
 
 clean:
@@ -53,5 +52,3 @@ _init:
 	-backend-config="key=${BACKEND_KEY}" \
 	-backend-config="region=${REGION}" \
 	-reconfigure
-
-build_deploy: build deploy

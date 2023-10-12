@@ -108,4 +108,4 @@ codeartifact_authenticate:
 infra__%:
 	${MAKE} --directory ${CURDIR}/infra -f make.mk $*
 
-build_push: infra__build infra__deploy
+build_deploy: infra__build infra__deploy
