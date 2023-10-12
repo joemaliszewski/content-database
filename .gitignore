@@ -46,6 +46,7 @@ pip-wheel-metadata
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*.plan
 
 # Local override files
 override.tf
