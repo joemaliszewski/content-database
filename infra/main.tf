@@ -1,3 +1,12 @@
+
+# resource "aws_vpn_gateway" "vpn_gw" {
+#   vpc_id = data.aws_vpc.vpc.id
+
+#   tags = {
+#     Name = "vinegar_main"
+#   }
+# }
+
 resource "aws_db_instance" "default" {
     allocated_storage    = 20
     storage_type         = "gp2"
