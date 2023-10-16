@@ -109,3 +109,9 @@ infra__%:
 	${MAKE} --directory ${CURDIR}/infra -f make.mk $*
 
 build_deploy: infra__build infra__deploy
+
+connect_db_local:
+	python content_database/db_connect.py --connect local
+
+connect_db_rds:
+	python content_database/db_connect.py --connect rds
