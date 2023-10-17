@@ -115,7 +115,6 @@ connect_db_local:
 
 connect_db_rds:
 	@curl ifconfig.me
-	@echo " is 82.37.202.85?"
 	@nslookup dev-rds-content-database.ckdakg2taymu.eu-west-1.rds.amazonaws.com
 	@nc -vz dev-rds-content-database.ckdakg2taymu.eu-west-1.rds.amazonaws.com 3306
 	python content_database/db_connect.py --connect rds
