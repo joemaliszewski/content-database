@@ -1,6 +1,13 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
 
+
+export REPOSITORY_NAME=content-database
+export AWS_ACCOUNT_NUMBER ?= 294141084087
+export REGION = eu-west-1
+export GLOBAL_VERSION = 0.0.1
+
+
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
 
@@ -97,3 +104,18 @@ poetry.lock:
 
 codeartifact_authenticate:
 	poetry config http-basic.artifact aws `aws codeartifact get-authorization-token --domain degould  --query authorizationToken --output text`
+
+infra__%:
+	${MAKE} --directory ${CURDIR}/infra -f make.mk $*
+
+build_deploy: infra__build infra__deploy
+
+connect_db_local:
+	python content_database/db_connect.py --connect local
+
+connect_db_rds:
+	@curl ifconfig.me
+	@echo " is 82.37.202.85?"
+	@nslookup dev-rds-content-database.ckdakg2taymu.eu-west-1.rds.amazonaws.com
+	@nc -vz dev-rds-content-database.ckdakg2taymu.eu-west-1.rds.amazonaws.com 3306
+	python content_database/db_connect.py --connect rds

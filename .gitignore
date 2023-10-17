@@ -38,3 +38,19 @@ pip-wheel-metadata
 /poetry.toml
 
 .env
+
+
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+*.plan
+
+# Local override files
+override.tf
+*_override.tf
+
+# System files
+.DS_Store

@@ -1,0 +1,28 @@
+version: '3.2'
+
+services:
+  aws-cli:
+    image: amazon/aws-cli
+    volumes:
+      - ~/.aws:/root/.aws:rw
+  
+  infra-utils:
+    image: ${DOCKER_REPO}/infra-utils:1.0.0
+    working_dir: /app
+    environment:
+      AWS_ACCESS_KEY_ID: 
+      AWS_SECRET_ACCESS_KEY:
+      AWS_SESSION_TOKEN:
+      
+      AWS_SHARED_CREDENTIALS_FILE: /app/.aws/credentials
+    volumes:
+      - ./:/app:rw
+      - ~/.aws:/app/.aws:rw
+      - ~/.ssh:/home/aws/.ssh
+
+  infra-io:
+    image: ${DOCKER_REPO}/infra-utils:1.0.0
+    working_dir: /home
+    entrypoint: sh
+    volumes:
+      - ./:/home:rw

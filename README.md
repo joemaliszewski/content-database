@@ -3,15 +3,10 @@
 
 A database to store chatgpt content
 
+# set up macos
+brew install pyenv
+pyenv install 3.9.10
+pyenv local 3.9.10
+pip install poetry
+poetry install
 
-
-# Features
-
-* TODO
-
-# Credits
-
-This package was created with Cookiecutter and the `vinegar/ML_CookiecutterPyPackage` project template.
-
-* Cookiecutter: https://github.com/cookiecutter/cookiecutter
-* vinegar/ML_CookiecutterPyPackage: https://github.com/vinegar/ML_CookiecutterPyPackage

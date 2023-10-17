@@ -24,26 +24,17 @@ readme = "README.md"
 [[tool.poetry.source]]
 name = "pypi_"
 url = "https://pypi.org/simple/"
-default = true
-
-[[tool.poetry.source]]
-name = "artifact"
-url = "https://degould-514497959020.d.codeartifact.eu-west-1.amazonaws.com/pypi/ml/simple/"
-secondary = true
+priority = "default"
 
 # Do not manually edit, use poetry add/remove (--dev) to manage dependencies
 [tool.poetry.dependencies]
-python = "~3.8"
-dvc = "^2.9.3"
-ml-pipeline-components = {version = "^0.3.5", source = "artifact"}
+python = ">=3.9,<3.13"
+mysql-connector-python = "^8.1.0"
+python-dotenv = "^1.0.0"
+loguru = "^0.7.2"
+pandas = "^2.1.1"
 
 [tool.poetry.dev-dependencies]
-assertpy = "^1.0"
-bandit = "^1.6.2"
-black = "^19.10b0"
-isort = "^5.10.1"
-pytest = "^6.2.5"
-coverage = "^5.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
