@@ -31,7 +31,6 @@ variable "application" {
 variable "trusted_ips" {
   description = "List of IP addresses that are allowed access"
   type        = list(string)
-  default     = ["82.37.202.85/32"]  
 }
 
 variable "subnet_ids" {
