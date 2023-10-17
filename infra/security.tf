@@ -6,6 +6,6 @@ resource "aws_security_group" "rds_sg" {
     from_port   = 3306
     to_port     = 3306
     protocol    = "tcp"
-    cidr_blocks = var.trusted_ips
+    cidr_blocks = [jsondecode(data.aws_secretsmanager_secret_version.trusted_ip.secret_string)["joes_ip"]]
   }
 }

@@ -27,14 +27,3 @@ variable "application" {
   description = "Application name. E.g. dashboard"
   type        = string
 }
-
-variable "trusted_ips" {
-  description = "List of IP addresses that are allowed access"
-  type        = list(string)
-}
-
-variable "subnet_ids" {
-  description = "List of subnet IDs for the RDS instance."
-  type        = list(string)
-}
-
